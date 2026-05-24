@@ -1,0 +1,23 @@
+{
+  "name": "Buylist API",
+  "dockerComposeFile": "../../docker-compose.yml",
+  "service": "api",
+  "workspaceFolder": "/app",
+  "forwardPorts": [8000, 5432],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "charliermarsh.ruff",
+        "ms-python.black-formatter",
+        "anthropic.claude-code"
+      ],
+      "settings": {
+        "python.defaultInterpreterPath": "/usr/local/bin/python",
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "ms-python.black-formatter"
+      }
+    }
+  }
+}
