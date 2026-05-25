@@ -3,11 +3,17 @@ from fastapi.openapi.utils import get_openapi
 from app.routers.auth import router as auth_router
 from app.routers.shoppinglist import router as shoppinglist_router
 from app.routers.item import router as item_router
-
+from app.database import engine, Base
+from app.models.user import User
+from app.models.item import Item
+from app.models.shoppinglist import ShoppingList
 
 
 
 app = FastAPI()
+@app.on_event("startup")
+async def startup():
+    Base.metadata.create_all(bind=engine)
 app.include_router(auth_router)
 app.include_router(shoppinglist_router)
 app.include_router(item_router)
