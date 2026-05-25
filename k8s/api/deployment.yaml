@@ -24,3 +24,18 @@ spec:
                 secretKeyRef:
                   name: api-secret
                   key: DATABASE_URL
+            - name: SECRET_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: api-secret
+                  key: SECRET_KEY
+            - name: ALGORITHM
+              valueFrom:
+                secretKeyRef:
+                  name: api-secret
+                  key: ALGORITHM
+            - name: ACCESS_TOKEN_EXPIRE_MINUTES
+              valueFrom:
+                secretKeyRef:
+                  name: api-secret
+                  key: ACCESS_TOKEN_EXPIRE_MINUTES
