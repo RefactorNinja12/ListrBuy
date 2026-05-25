@@ -66,7 +66,7 @@ jobs:
           username: ${{ secrets.PI_USER }}
           key: ${{ secrets.PI_SSH_KEY }}
           script: |
-            kubectl apply -f ~/buylist/k8s/
+            kubectl apply -R -f ~/buylist/k8s/
             kubectl set image deployment/api \
               api=ghcr.io/${{ env.IMAGE_OWNER }}/buylist-api:${{ github.sha }} \
               -n buylist
